@@ -31,7 +31,7 @@ jobs:
       
       # Environment Secrets - In Real Ensure all of the below have been created as an Environment Secret (Projects Settings > Secrets > Actions section, specially related to the environment in question) #
       databaseName: "WidgetZBuild"
-      JDBC: "jdbc:sqlserver://clq-truecost-misql-devqa.public.0568cc4f27a2.database.windows.net:3342;authentication=sqlPassword;databaseName=WidgetZBuild;encrypt=true;trustServerCertificate=true" 
+      JDBC: "jdbc:sqlserver://clq-truecost-misql-devqa.public.0568cc4f27a2.database.windows.net:3342;database=WidgetZBuild;integratedSecurity=false;user=flywaytest;password=1rDGQDt4598P;" 
 
       displayName: 'Build'
       executeBuild: true
@@ -66,7 +66,7 @@ jobs:
     env:
       stage: 'BuildCodeCheck'
       databaseName: "WidgetBuild"
-      JDBC: "jdbc:sqlserver://clq-truecost-misql-devqa.public.0568cc4f27a2.database.windows.net:3342;authentication=sqlPassword;databaseName=WidgetZBuild;encrypt=true;trustServerCertificate=true" 
+      JDBC: "jdbc:sqlserver://clq-truecost-misql-devqa.public.0568cc4f27a2.database.windows.net:3342;database=WidgetZBuild;integratedSecurity=false;user=flywaytest;password=1rDGQDt4598P;" 
       pauseForCodeReview: true
  
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -102,7 +102,7 @@ jobs:
     env:
       stage: 'Test'
       databaseName: "WidgetTest"
-      JDBC: "jdbc:sqlserver://clq-truecost-misql-devqa.public.0568cc4f27a2.database.windows.net:3342;authentication=sqlPassword;databaseName=WidgetTest;encrypt=true;trustServerCertificate=true" 
+      JDBC: "jdbc:sqlserver://clq-truecost-misql-devqa.public.0568cc4f27a2.database.windows.net:3342;database=WidgetTest;integratedSecurity=false;user=flywaytest;password=1rDGQDt4598P;" 
       pauseForCodeReview: true
  
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -127,7 +127,7 @@ jobs:
     env:
       stage: 'Prod'
       databaseName: "WidgetProd"
-      JDBC: "jdbc:sqlserver://clq-truecost-misql-devqa.public.0568cc4f27a2.database.windows.net:3342;authentication=sqlPassword;databaseName=WidgetProd;encrypt=true;trustServerCertificate=true" 
+      JDBC: "jdbc:sqlserver://clq-truecost-misql-devqa.public.0568cc4f27a2.database.windows.net:3342;database=WidgetProd;integratedSecurity=false;user=flywaytest;password=1rDGQDt4598P;" 
       pauseForCodeReview: true
  
     # Steps represent a sequence of tasks that will be executed as part of the job
