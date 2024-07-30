@@ -13,7 +13,7 @@ variables:
   FIRST_UNDO_SCRIPT: "002"
   ACTIONS_RUNNER_DEBUG: true
   DATABASE_NAME: "WidgetZBuild"
-  JDBC_URL: "jdbc:sqlserver://localhost;databaseName=WidgetZBuild;encrypt=true;integratedSecurity=true;trustServerCertificate=true"
+  JDBC_URL: "jdbc:sqlserver://clq-truecost-misql-devqa.public.0568cc4f27a2.database.windows.net:3342;authentication=sqlPassword;databaseName=WidgetZBuild;encrypt=true;trustServerCertificate=true"
   group: AutoPilot
 
 stages:
