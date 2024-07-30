@@ -58,8 +58,8 @@ stages:
         variables:
           stage: 'Prod'
           databaseName: "WidgetProd"
-          JDBC: "jdbc:sqlserver://localhost;databaseName=WidgetProd;encrypt=true;integratedSecurity=true;trustServerCertificate=true"
-          check_JDBC: "jdbc:sqlserver://localhost;databaseName=WidgetZCheck;encrypt=true;integratedSecurity=true;trustServerCertificate=true"
+          JDBC: "jdbc:sqlserver://clq-truecost-misql-devqa.public.0568cc4f27a2.database.windows.net:3342;authentication=sqlPassword;databaseName=WidgetProd;encrypt=true;trustServerCertificate=true"
+          check_JDBC: "jdbc:sqlserver://clq-truecost-misql-devqa.public.0568cc4f27a2.database.windows.net:3342;authentication=sqlPassword;databaseName=WidgetZCheck;encrypt=true;trustServerCertificate=true"
           generateDriftAndChangeReport: true
           failReleaseIfDriftDetected: false
           staticCodeAnalysis: false
@@ -88,7 +88,7 @@ stages:
         variables:
           stage: 'Prod'
           databaseName: "WidgetProd"
-          JDBC: "jdbc:sqlserver://localhost;databaseName=WidgetProd;encrypt=true;integratedSecurity=true;trustServerCertificate=true"
+          JDBC: "jdbc:sqlserver://clq-truecost-misql-devqa.public.0568cc4f27a2.database.windows.net:3342;authentication=sqlPassword;databaseName=WidgetProd;encrypt=true;trustServerCertificate=true"
           pauseForCodeReview: true
 
         steps:
