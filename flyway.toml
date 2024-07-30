@@ -3,13 +3,11 @@ name = "FlywayTrialProject"
 databaseType = "SqlServer"
 
 [environments.development]
-url = "jdbc:sqlserver://localhost;databaseName=WidgetDev;encrypt=true;integratedSecurity=true;trustServerCertificate=true"
-schemas = [ ]
-displayName = "Development database"
+url = "jdbc:sqlserver://clq-truecost-misql-devqa.public.0568cc4f27a2.database.windows.net:3342;authentication=sqlPassword;databaseName=WidgetDev;encrypt=true;trustServerCertificate=true"
+displayName = "misql-devqa"
 
 [environments.shadow]
-url = "jdbc:sqlserver://localhost;databaseName=WidgetZShadow;encrypt=true;integratedSecurity=true;trustServerCertificate=true"
-schemas = [ ]
+url = "jdbc:sqlserver://clq-truecost-misql-devqa.public.0568cc4f27a2.database.windows.net:3342;authentication=sqlPassword;databaseName=WidgetZShadow;encrypt=true;trustServerCertificate=true"
 displayName = "Shadow database"
 provisioner = "clean"
 
@@ -26,7 +24,6 @@ validateMigrationNaming = true
 defaultSchema = "dbo"
 baselineOnMigrate = true
 baselineVersion = "001_20230703120714"
-
 
 [flywayDesktop]
 developmentEnvironment = "development"
