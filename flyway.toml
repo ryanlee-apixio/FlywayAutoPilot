@@ -12,7 +12,7 @@ displayName = "Shadow database"
 provisioner = "clean"
 
 [environments.production]
-url = "jdbc:sqlserver://localhost;databaseName=WidgetProd;encrypt=true;integratedSecurity=true;trustServerCertificate=true"
+url = "jdbc:sqlserver://clq-truecost-misql-devqa.public.0568cc4f27a2.database.windows.net:3342;authentication=sqlPassword;databaseName=WidgetProd;encrypt=true;trustServerCertificate=true"
 schemas = [ ]
 displayName = "Production"
 
