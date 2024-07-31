@@ -149,4 +149,4 @@ jobs:
       - name: Migrate Build DB
         if: ${{ true }}
         run: |
-          flyway -user="${{ env.userName }}" -password="${{ env.password }}" -baselineOnMigrate="true" -licenseKey="${{ env.FLYWAY_LICENSE_KEY }}" -configFiles="${{ GITHUB.WORKSPACE }}\flyway.toml" -locations="filesystem:${{ GITHUB.WORKSPACE }}\migrations" info migrate info -url="${{ env.JDBC }}" -cleanDisabled='false'
+          flyway -user="${{ secrets.database_user }}" -password="${{ secrets.database_password }}" -baselineOnMigrate="true" -licenseKey="${{ env.FLYWAY_LICENSE_KEY }}" -configFiles="${{ GITHUB.WORKSPACE }}\flyway.toml" -locations="filesystem:${{ GITHUB.WORKSPACE }}\migrations" info migrate info -url="${{ env.JDBC }}" -cleanDisabled='false'
