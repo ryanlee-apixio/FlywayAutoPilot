@@ -3,18 +3,18 @@ name = "FlywayTrialProject"
 databaseType = "SqlServer"
 
 [environments.development]
-url = "jdbc:sqlserver://clq-truecost-misql-devqa.public.0568cc4f27a2.database.windows.net:3342;database=WidgetDev;integratedSecurity=false;user=flywaytest;password=1rDGQDt4598P;"
-user = "flywaytest"
-password = "1rDGQDt4598P"
+url = "jdbc:sqlserver://clq-truecost-misql-devqa.public.0568cc4f27a2.database.windows.net:3342;database=WidgetDev;integratedSecurity=false;user=${{ vars.database_user }};password=${{ vars.database_password }};"
+user = "${{ vars.database_user }}"
+password = "${{ vars.database_password }}"
 displayName = "misql-devqa"
 
 [environments.shadow]
-url = "jdbc:sqlserver://clq-truecost-misql-devqa.public.0568cc4f27a2.database.windows.net:3342;database=WidgetZShadow;integratedSecurity=false;user=flywaytest;password=1rDGQDt4598P;"
+url = "jdbc:sqlserver://clq-truecost-misql-devqa.public.0568cc4f27a2.database.windows.net:3342;database=WidgetZShadow;integratedSecurity=false;user=${{ vars.database_user }};password=${{ vars.database_password }};"
 displayName = "Shadow database"
 provisioner = "clean"
 
 [environments.production]
-url = "jdbc:sqlserver://clq-truecost-misql-devqa.public.0568cc4f27a2.database.windows.net:3342;database=WidgetProd;integratedSecurity=false;user=flywaytest;password=1rDGQDt4598P;"
+url = "jdbc:sqlserver://clq-truecost-misql-devqa.public.0568cc4f27a2.database.windows.net:3342;database=WidgetProd;integratedSecurity=false;user=${{ vars.database_user }};password=${{ vars.database_password }};"
 schemas = [ ]
 displayName = "Production"
 
