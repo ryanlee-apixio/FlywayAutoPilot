@@ -34,6 +34,11 @@ stages:
           - checkout: self
           
           - script: |
+              auth -startTeamsTrial -IAgreeToTheEula
+            displayName: 'Clean Build DB'
+            condition: eq(variables['executeBuild'], true)
+
+          - script: |
               flyway -baselineOnMigrate=true -licenseKey="$(FLYWAY_LICENSE_KEY)" -configFiles="$(Build.SourcesDirectory)/flyway.toml" -locations="filesystem:$(Build.SourcesDirectory)/migrations" info clean info -url="$(JDBC_URL)" -cleanDisabled=false -reportFilename="Reports/CleanDB"
             displayName: 'Clean Build DB'
             condition: eq(variables['executeBuild'], true)

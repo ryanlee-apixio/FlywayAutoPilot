@@ -5,7 +5,7 @@ databaseType = "SqlServer"
 [environments.development]
 url = "jdbc:sqlserver://clq-truecost-misql-devqa.public.0568cc4f27a2.database.windows.net:3342;database=WidgetDev;integratedSecurity=false;user=flywaytest;password=1rDGQDt4598P;"
 user = "flywaytest"
-password = "1rDGQDt4598P"
+password = "51ZbsHcIj125"
 displayName = "misql-devqa"
 
 [environments.shadow]
