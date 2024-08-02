@@ -13,7 +13,7 @@ variables:
   FIRST_UNDO_SCRIPT: "002"
   ACTIONS_RUNNER_DEBUG: true
   DATABASE_NAME: "WidgetZBuild"
-  JDBC_URL: "jdbc:sqlserver://clq-truecost-misql-devqa.public.0568cc4f27a2.database.windows.net:3342;database=WidgetZBuild;integratedSecurity=false;user=${{ secret.database_user }};password=${{ secret.database_password }};"
+  JDBC_URL: "jdbc:sqlserver://clq-truecost-misql-devqa.public.0568cc4f27a2.database.windows.net:3342;database=WidgetZBuild;integratedSecurity=false;user=${{ secrets.database_user }};password=${{ secrets.database_password }};"
   group: AutoPilot
 
 stages:
@@ -63,8 +63,8 @@ stages:
         variables:
           stage: 'Prod'
           databaseName: "WidgetProd"
-          JDBC: "jdbc:sqlserver://clq-truecost-misql-devqa.public.0568cc4f27a2.database.windows.net:3342;database=WidgetProd;integratedSecurity=false;user=${{ secret.database_user }};password=${{ secret.database_password }};"
-          check_JDBC: "jdbc:sqlserver://clq-truecost-misql-devqa.public.0568cc4f27a2.database.windows.net:3342;database=WidgetZCheck;integratedSecurity=false;user=${{ secret.database_user }};password=${{ secret.database_password }};"
+          JDBC: "jdbc:sqlserver://clq-truecost-misql-devqa.public.0568cc4f27a2.database.windows.net:3342;database=WidgetProd;integratedSecurity=false;user=${{ secrets.database_user }};password=${{ secrets.database_password }};"
+          check_JDBC: "jdbc:sqlserver://clq-truecost-misql-devqa.public.0568cc4f27a2.database.windows.net:3342;database=WidgetZCheck;integratedSecurity=false;user=${{ secrets.database_user }};password=${{ secrets.database_password }};"
           generateDriftAndChangeReport: true
           failReleaseIfDriftDetected: false
           staticCodeAnalysis: false
@@ -93,7 +93,7 @@ stages:
         variables:
           stage: 'Prod'
           databaseName: "WidgetProd"
-          JDBC: "jdbc:sqlserver://clq-truecost-misql-devqa.public.0568cc4f27a2.database.windows.net:3342;database=WidgetProd;integratedSecurity=false;user=${{ secret.database_user }};password=${{ secret.database_password }};"
+          JDBC: "jdbc:sqlserver://clq-truecost-misql-devqa.public.0568cc4f27a2.database.windows.net:3342;database=WidgetProd;integratedSecurity=false;user=${{ secrets.database_user }};password=${{ secrets.database_password }};"
           pauseForCodeReview: true
 
         steps:
